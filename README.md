@@ -68,10 +68,16 @@ cd ~/RSSNoticias
 ```
 plasmoid/
 ├── metadata.json                 # metadados do pacote (Plasma/Applet)
+├── po/                           # fontes de tradução (.pot/.po) + scripts
+│   ├── extract.py                # extrai i18n("...") dos QML -> template.pot
+│   ├── fill_en.py                # aplica as traduções em inglês (en_US.po)
+│   └── build_translations.sh     # gera template.pot, mescla e compila .mo
 └── contents/
     ├── config/
     │   ├── config.qml            # define a página de configurações
     │   └── main.xml              # esquema de configuração (feeds, maxItems)
+    ├── locale/
+    │   └── <lang>/LC_MESSAGES/plasma_applet_rafael.rssnoticias.mo
     └── ui/
         ├── main.qml              # widget (PlasmoidItem + UI estilo Win11)
         ├── configGeneral.qml     # página: adicionar/remover feeds
@@ -82,6 +88,27 @@ plasmoid/
 neste Qt 6): faz a varredura XML com tokenização própria, cobrindo RSS 2.0,
 Atom, CDATA, entidades, `enclosure`/`media:content` e links do tipo
 `<atom:link href="…"/>` (Google Notícias).
+
+## Traduções
+
+O widget segue o idioma do sistema (Plasma carrega automaticamente os
+catálogos embutidos em `contents/locale/`). Os textos-fonte estão em
+português; já há catálogos **pt_BR** e **en_US/en**. O idioma do sistema
+que não tiver catálogo cai de volta para o português.
+
+Para adicionar/atualizar idiomas:
+
+```sh
+cd plasmoid/po
+msginit --no-translator --locale=fr --input=template.pot -o fr.po
+# edite fr.po (traduza as msgstr)
+printf 'msgfmt fr.po -o ../contents/locale/fr/LC_MESSAGES/plasma_applet_rafael.rssnoticias.mo\n' >> build_translations.sh
+# ajuste build_translations.sh para incluir fr na compilação
+sh build_translations.sh        # reextrai strings, mescla, compensa .mo
+```
+
+Depois de mudar qualquer texto nos QML: `sh plasmoid/po/build_translations.sh`
+e reinstale o widget (`./install.sh`).
 
 ## Testes
 
