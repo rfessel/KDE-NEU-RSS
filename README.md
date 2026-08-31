@@ -94,8 +94,9 @@ Atom, CDATA, entidades, `enclosure`/`media:content` e links do tipo
 
 O widget segue o idioma do sistema (Plasma carrega automaticamente os
 catálogos embutidos em `contents/locale/`). Os textos-fonte estão em
-português; já há catálogos para **pt_BR, en, en_US, es, it, de e fr**.
-O idioma do sistema que não tiver catálogo cai de volta para o português.
+português; já há catálogos para **pt_BR, en, en_US, es, it, de, fr, ru,
+he, ja e zh_CN**. O idioma do sistema que não tiver catálogo cai de volta
+para o português.
 
 Para adicionar/atualizar idiomas:
 

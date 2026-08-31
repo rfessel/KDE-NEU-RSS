@@ -349,4 +349,280 @@ TRANS = {
         "Boa tarde": "Bon après-midi",
         "Boa noite": "Bonsoir",
     },
+
+    'ru': {
+        "Informe uma URL válida (ex.: https://exemplo.com/feed.xml).":
+            "Введите корректный URL (напр.: https://example.com/feed.xml).",
+        "Esse feed já foi adicionado.": "Этот канал уже добавлен.",
+        "Adicionar feed RSS": "Добавить RSS-канал",
+        "URL do feed (RSS ou Atom)…": "URL канала (RSS или Atom)…",
+        "Limpar": "Очистить",
+        "Adicionar": "Добавить",
+        "Testando…": "Проверка…",
+        "Testar": "Проверить",
+        "Seus feeds (%1)": "Ваши каналы (%1)",
+        "Atualizar": "Обновить",
+        "Atualização automática dos feeds": "Автоматическое обновление каналов",
+        "Nenhum feed adicionado. Cole a URL de um feed no campo acima e clique em “Adicionar”.":
+            "Каналы не добавлены. Вставьте URL канала в поле выше и нажмите «Добавить».",
+        "Remover feed": "Удалить канал",
+        "Limite de notícias deste feed:": "Лимит новостей этого канала:",
+        "notícias": "новостей",
+        "O limite total de notícias da lista está na seção “Exibição”. As alterações são aplicadas imediatamente.":
+            "Общий лимит новостей списка находится в разделе «Отображение». Изменения применяются немедленно.",
+        "Escolher ícone": "Выбрать значок",
+        "Imagens (*.png *.jpg *.jpeg *.svg *.webp *.bmp)":
+            "Изображения (*.png *.jpg *.jpeg *.svg *.webp *.bmp)",
+        "Todos os arquivos (*)": "Все файлы (*)",
+        "Exibição": "Отображение",
+        "Máximo total de notícias na lista:": "Максимум новостей в списке:",
+        "Linhas da chamada da matéria:": "Строки заголовка новости:",
+        "linhas por notícia": "строк на новость",
+        "Colunas de notícias:": "Колонки новостей:",
+        "colunas no widget": "колонок в виджете",
+        "Com mais de 1 coluna, as notícias são distribuídas automaticamente entre as colunas.":
+            "При более чем 1 колонке новости автоматически распределяются по колонкам.",
+        "Este limite vale para a lista inteira, somando todos os feeds. Para ajustar cada fonte individualmente, use a seção “Feeds de notícias”.":
+            "Этот лимит действует для всего списка с учётом всех каналов. Чтобы настроить каждый источник отдельно, используйте раздел «Новостные каналы».",
+        "As alterações são aplicadas imediatamente ao widget.":
+            "Изменения немедленно применяются к виджету.",
+        "Ícone do widget": "Значок виджета",
+        "Este ícone aparece na barra de tarefas e no próprio widget.":
+            "Этот значок отображается на панели задач и в самом виджете.",
+        "Usar padrão": "Использовать по умолчанию",
+        "Carregar arquivo próprio…": "Загрузить свой файл…",
+        "Use uma imagem (PNG, SVG, JPG…) do seu computador como ícone.":
+            "Используйте изображение (PNG, SVG, JPG…) с компьютера в качестве значка.",
+        "Ícone próprio em uso:\n%1": "Используется свой значок:\n%1",
+        "Remover arquivo": "Удалить файл",
+        "Digite o nome de um ícone…": "Введите имя значка…",
+        "Escolha um dos ícones acima, digite o nome de qualquer ícone do tema (ex.: rss, internet-mail, text-html) ou carregue um arquivo próprio.":
+            "Выберите один из значков выше, введите имя любого значка темы (напр.: rss, internet-mail, text-html) или загрузите свой файл.",
+        "tempo esgotado": "время ожидания истекло",
+        "falha de conexão": "ошибка соединения",
+        "resposta inválida (não é RSS) ou servidor inacessível":
+            "недопустимый ответ (не RSS) или сервер недоступен",
+        "HTTP %1": "HTTP %1",
+        "%1 — %2": "%1 — %2",
+        "Falha em %1 (%2)": "Ошибка в %1 (%2)",
+        "Atualizar notícias": "Обновить новости",
+        "Nenhum feed configurado": "Каналы не настроены",
+        "Nenhuma notícia encontrada": "Новости не найдены",
+        "Nenhuma notícia carregada. Veja os detalhes abaixo.":
+            "Новости не загружены. Подробности см. ниже.",
+        "Adicionar feed…": "Добавить канал…",
+        "Tentar novamente": "Повторить попытку",
+        "Alguns feeds não carregaram:": "Некоторые каналы не загрузились:",
+        "Atualizado às %1": "Обновлено в %1",
+        "Bom dia": "Доброе утро",
+        "Boa tarde": "Добрый день",
+        "Boa noite": "Добрый вечер",
+    },
+
+    'he': {
+        "Informe uma URL válida (ex.: https://exemplo.com/feed.xml).":
+            "הזן כתובת URL תקפה (למשל: https://example.com/feed.xml).",
+        "Esse feed já foi adicionado.": "ערוץ זה כבר נוסף.",
+        "Adicionar feed RSS": "הוסף ערוץ RSS",
+        "URL do feed (RSS ou Atom)…": "כתובת URL של הערוץ (RSS או Atom)…",
+        "Limpar": "נקה",
+        "Adicionar": "הוסף",
+        "Testando…": "בודק…",
+        "Testar": "בדוק",
+        "Seus feeds (%1)": "הערוצים שלך (%1)",
+        "Atualizar": "עדכן",
+        "Atualização automática dos feeds": "עדכון אוטומטי של הערוצים",
+        "Nenhum feed adicionado. Cole a URL de um feed no campo acima e clique em “Adicionar”.":
+            "לא נוסף ערוץ. הדבק כתובת URL של ערוץ בשדה למעלה ולחץ על «הוסף».",
+        "Remover feed": "הסר ערוץ",
+        "Limite de notícias deste feed:": "מגבלת חדשות של ערוץ זה:",
+        "notícias": "חדשות",
+        "O limite total de notícias da lista está na seção “Exibição”. As alterações são aplicadas imediatamente.":
+            "מגבלת החדשות הכוללת של הרשימה נמצאת בסעיף «תצוגה». השינויים מוחלים מיד.",
+        "Escolher ícone": "בחר סמל",
+        "Imagens (*.png *.jpg *.jpeg *.svg *.webp *.bmp)":
+            "תמונות (*.png *.jpg *.jpeg *.svg *.webp *.bmp)",
+        "Todos os arquivos (*)": "כל הקבצים (*)",
+        "Exibição": "תצוגה",
+        "Máximo total de notícias na lista:": "מקסימום חדשות ברשימה:",
+        "Linhas da chamada da matéria:": "שורות של כותרת הכתבה:",
+        "linhas por notícia": "שורות לחדשה",
+        "Colunas de notícias:": "עמודות חדשות:",
+        "colunas no widget": "עמודות בווידג'ט",
+        "Com mais de 1 coluna, as notícias são distribuídas automaticamente entre as colunas.":
+            "עם יותר מעמודה אחת, החדשות מחולקות אוטומטית בין העמודות.",
+        "Este limite vale para a lista inteira, somando todos os feeds. Para ajustar cada fonte individualmente, use a seção “Feeds de notícias”.":
+            "מגבלה זו חלה על כל הרשימה, בסיכום כל הערוצים. כדי להתאים כל מקור בנפרד, השתמש בסעיף «ערוצי חדשות».",
+        "As alterações são aplicadas imediatamente ao widget.":
+            "השינויים חלים על הווידג'ט מיד.",
+        "Ícone do widget": "סמל הווידג'ט",
+        "Este ícone aparece na barra de tarefas e no próprio widget.":
+            "סמל זה מופיע בשורת המשימות ובווידג'ט עצמו.",
+        "Usar padrão": "השתמש בברירת מחדל",
+        "Carregar arquivo próprio…": "טען קובץ משלי…",
+        "Use uma imagem (PNG, SVG, JPG…) do seu computador como ícone.":
+            "השתמש בתמונה (PNG, SVG, JPG…) מהמחשב שלך כסמל.",
+        "Ícone próprio em uso:\n%1": "נעשה שימוש בסמל משלי:\n%1",
+        "Remover arquivo": "הסר קובץ",
+        "Digite o nome de um ícone…": "הקלד שם של סמל…",
+        "Escolha um dos ícones acima, digite o nome de qualquer ícone do tema (ex.: rss, internet-mail, text-html) ou carregue um arquivo próprio.":
+            "בחר אחת מהסמלים למעלה, הקלד שם של כל סמל מהתמה (למשל: rss, internet-mail, text-html) או טען קובץ משלי.",
+        "tempo esgotado": "תם הזמן",
+        "falha de conexão": "כשל חיבור",
+        "resposta inválida (não é RSS) ou servidor inacessível":
+            "תגובה לא תקפה (לא RSS) או שרת לא נגיש",
+        "HTTP %1": "HTTP %1",
+        "%1 — %2": "%1 — %2",
+        "Falha em %1 (%2)": "כשל ב-%1 (%2)",
+        "Atualizar notícias": "עדכן חדשות",
+        "Nenhum feed configurado": "לא הוגדר ערוץ",
+        "Nenhuma notícia encontrada": "לא נמצאו חדשות",
+        "Nenhuma notícia carregada. Veja os detalhes abaixo.":
+            "לא נטענו חדשות. ראה פרטים למטה.",
+        "Adicionar feed…": "הוסף ערוץ…",
+        "Tentar novamente": "נסה שוב",
+        "Alguns feeds não carregaram:": "חלק מהערוצים לא נטענו:",
+        "Atualizado às %1": "עודכן ב-%1",
+        "Bom dia": "בוקר טוב",
+        "Boa tarde": "צהריים טובים",
+        "Boa noite": "ערב טוב",
+    },
+
+    'ja': {
+        "Informe uma URL válida (ex.: https://exemplo.com/feed.xml).":
+            "有効なURLを入力してください（例：https://example.com/feed.xml）。",
+        "Esse feed já foi adicionado.": "このフィードはすでに追加されています。",
+        "Adicionar feed RSS": "RSSフィードを追加",
+        "URL do feed (RSS ou Atom)…": "フィードのURL（RSSまたはAtom）…",
+        "Limpar": "クリア",
+        "Adicionar": "追加",
+        "Testando…": "テスト中…",
+        "Testar": "テスト",
+        "Seus feeds (%1)": "フィード (%1)",
+        "Atualizar": "更新",
+        "Atualização automática dos feeds": "フィードの自動更新",
+        "Nenhum feed adicionado. Cole a URL de um feed no campo acima e clique em “Adicionar”.":
+            "フィードが追加されていません。上の欄にフィードのURLを貼り付けて「追加」をクリックしてください。",
+        "Remover feed": "フィードを削除",
+        "Limite de notícias deste feed:": "このフィードのニュース上限：",
+        "notícias": "ニュース",
+        "O limite total de notícias da lista está na seção “Exibição”. As alterações são aplicadas imediatamente.":
+            "リストのニュース総数上限は「表示」セクションにあります。変更はすぐに反映されます。",
+        "Escolher ícone": "アイコンを選択",
+        "Imagens (*.png *.jpg *.jpeg *.svg *.webp *.bmp)":
+            "画像 (*.png *.jpg *.jpeg *.svg *.webp *.bmp)",
+        "Todos os arquivos (*)": "すべてのファイル (*)",
+        "Exibição": "表示",
+        "Máximo total de notícias na lista:": "リストのニュースの最大数：",
+        "Linhas da chamada da matéria:": "見出しの行数：",
+        "linhas por notícia": "ニュースごとの行数",
+        "Colunas de notícias:": "ニュースの列数：",
+        "colunas no widget": "ウィジェットの列数",
+        "Com mais de 1 coluna, as notícias são distribuídas automaticamente entre as colunas.":
+            "2列以上の場合、ニュースは各列に自動的に振り分けられます。",
+        "Este limite vale para a lista inteira, somando todos os feeds. Para ajustar cada fonte individualmente, use a seção “Feeds de notícias”.":
+            "この上限はすべてのフィードを合計したリスト全体に適用されます。各ソースを個別に調整するには、「ニュースフィード」セクションを使用してください。",
+        "As alterações são aplicadas imediatamente ao widget.":
+            "変更はウィジェットにすぐ反映されます。",
+        "Ícone do widget": "ウィジェットのアイコン",
+        "Este ícone aparece na barra de tarefas e no próprio widget.":
+            "このアイコンはタスクバーとウィジェット本体に表示されます。",
+        "Usar padrão": "既定を使用",
+        "Carregar arquivo próprio…": "独自のファイルを読み込む…",
+        "Use uma imagem (PNG, SVG, JPG…) do seu computador como ícone.":
+            "コンピューターの画像（PNG、SVG、JPG…）をアイコンとして使用します。",
+        "Ícone próprio em uso:\n%1": "独自のアイコンを使用中：\n%1",
+        "Remover arquivo": "ファイルを削除",
+        "Digite o nome de um ícone…": "アイコンの名前を入力…",
+        "Escolha um dos ícones acima, digite o nome de qualquer ícone do tema (ex.: rss, internet-mail, text-html) ou carregue um arquivo próprio.":
+            "上のアイコンを選ぶか、テーマの任意のアイコン名（例：rss、internet-mail、text-html）を入力するか、独自のファイルを読み込んでください。",
+        "tempo esgotado": "タイムアウト",
+        "falha de conexão": "接続エラー",
+        "resposta inválida (não é RSS) ou servidor inacessível":
+            "無効な応答（RSSではない）またはサーバーにアクセス不可",
+        "HTTP %1": "HTTP %1",
+        "%1 — %2": "%1 — %2",
+        "Falha em %1 (%2)": "%1 でエラー (%2)",
+        "Atualizar notícias": "ニュースを更新",
+        "Nenhum feed configurado": "フィードが設定されていません",
+        "Nenhuma notícia encontrada": "ニュースが見つかりません",
+        "Nenhuma notícia carregada. Veja os detalhes abaixo.":
+            "ニュースが読み込まれませんでした。詳細は下記をご覧ください。",
+        "Adicionar feed…": "フィードを追加…",
+        "Tentar novamente": "再試行",
+        "Alguns feeds não carregaram:": "一部のフィードが読み込まれませんでした。",
+        "Atualizado às %1": "%1 に更新",
+        "Bom dia": "おはようございます",
+        "Boa tarde": "こんにちは",
+        "Boa noite": "こんばんは",
+    },
+
+    'zh_CN': {
+        "Informe uma URL válida (ex.: https://exemplo.com/feed.xml).":
+            "请输入有效的 URL（例如：https://example.com/feed.xml）。",
+        "Esse feed já foi adicionado.": "该订阅源已添加。",
+        "Adicionar feed RSS": "添加 RSS 订阅源",
+        "URL do feed (RSS ou Atom)…": "订阅源 URL（RSS 或 Atom）…",
+        "Limpar": "清除",
+        "Adicionar": "添加",
+        "Testando…": "正在测试…",
+        "Testar": "测试",
+        "Seus feeds (%1)": "您的订阅源 (%1)",
+        "Atualizar": "更新",
+        "Atualização automática dos feeds": "订阅源自动更新",
+        "Nenhum feed adicionado. Cole a URL de um feed no campo acima e clique em “Adicionar”.":
+            "尚未添加订阅源。请在上方字段中粘贴订阅源 URL，然后点击“添加”。",
+        "Remover feed": "移除订阅源",
+        "Limite de notícias deste feed:": "此订阅源的新闻上限：",
+        "notícias": "条新闻",
+        "O limite total de notícias da lista está na seção “Exibição”. As alterações são aplicadas imediatamente.":
+            "列表的新闻总数上限位于“显示”部分。更改会立即生效。",
+        "Escolher ícone": "选择图标",
+        "Imagens (*.png *.jpg *.jpeg *.svg *.webp *.bmp)":
+            "图片 (*.png *.jpg *.jpeg *.svg *.webp *.bmp)",
+        "Todos os arquivos (*)": "所有文件 (*)",
+        "Exibição": "显示",
+        "Máximo total de notícias na lista:": "列表中新闻的最大总数：",
+        "Linhas da chamada da matéria:": "报道标题行数：",
+        "linhas por notícia": "每条新闻的行数",
+        "Colunas de notícias:": "新闻列数：",
+        "colunas no widget": "小组件中的列数",
+        "Com mais de 1 coluna, as notícias são distribuídas automaticamente entre as colunas.":
+            "超过 1 列时，新闻会在各列之间自动分配。",
+        "Este limite vale para a lista inteira, somando todos os feeds. Para ajustar cada fonte individualmente, use a seção “Feeds de notícias”.":
+            "此上限适用于整个列表（所有订阅源之和）。要单独调整每个源，请使用“新闻订阅源”部分。",
+        "As alterações são aplicadas imediatamente ao widget.":
+            "更改会立即应用到小组件。",
+        "Ícone do widget": "小组件图标",
+        "Este ícone aparece na barra de tarefas e no próprio widget.":
+            "此图标显示在任务栏和小组件本身上。",
+        "Usar padrão": "使用默认值",
+        "Carregar arquivo próprio…": "加载自己的文件…",
+        "Use uma imagem (PNG, SVG, JPG…) do seu computador como ícone.":
+            "将计算机中的图片（PNG、SVG、JPG…）用作图标。",
+        "Ícone próprio em uso:\n%1": "正在使用的自定义图标：\n%1",
+        "Remover arquivo": "移除文件",
+        "Digite o nome de um ícone…": "输入图标名称…",
+        "Escolha um dos ícones acima, digite o nome de qualquer ícone do tema (ex.: rss, internet-mail, text-html) ou carregue um arquivo próprio.":
+            "请选择上方图标之一、输入主题中任意图标的名称（例如 rss、internet-mail、text-html），或加载自己的文件。",
+        "tempo esgotado": "超时",
+        "falha de conexão": "连接失败",
+        "resposta inválida (não é RSS) ou servidor inacessível":
+            "响应无效（不是 RSS）或无法访问服务器",
+        "HTTP %1": "HTTP %1",
+        "%1 — %2": "%1 — %2",
+        "Falha em %1 (%2)": "%1 出错 (%2)",
+        "Atualizar notícias": "更新新闻",
+        "Nenhum feed configurado": "未配置订阅源",
+        "Nenhuma notícia encontrada": "未找到新闻",
+        "Nenhuma notícia carregada. Veja os detalhes abaixo.":
+            "未加载新闻。请查看下方详情。",
+        "Adicionar feed…": "添加订阅源…",
+        "Tentar novamente": "重试",
+        "Alguns feeds não carregaram:": "部分订阅源未加载：",
+        "Atualizado às %1": "更新于 %1",
+        "Bom dia": "早上好",
+        "Boa tarde": "下午好",
+        "Boa noite": "晚上好",
+    },
 }
