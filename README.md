@@ -1,28 +1,22 @@
-# RSS Notícias — plasmoid de notícias para KDE Plasma 6
+# KDE NEU RSS
 
-Widget de leitura de feeds RSS/Atom com visual inspirado no widget de
-notícias do Windows 11: cartões arredondados, manchete em destaque, fonte
-e tempo relativo, atualização automática e adição de feeds manualmente.
+Widget de leitura de notícias RSS/Atom para PLASMA 6.
 
 ## Recursos
 
-- Adicionar feeds RSS ou Atom manualmente (URL), direto no widget ou
-  pelas configurações.
+- Adicionar feeds RSS ou Atom manualmente (URL)
 - Múltiplos feeds ao mesmo tempo; as notícias são mescladas e ordenadas
   por data.
-- Visual estilo Windows 11: cartões com cantos arredondados, miniatura
-  da imagem quando o feed fornece (enclosure / media:content), fonte e
-  "há 5 min / há 2 h / há 3 dias".
+- Visual limpo,com miniatura   da imagem quando o feed fornecee um breve resumo
 - Clique na notícia abre o link no navegador; passe o mouse para ver o
   resumo.
-- Atualização automática a cada 10 minutos + botão de atualizar; recarrega
-  ao abrir o popup no painel.
+- Atualização manual ou automática editável na aba feeds.
 - Limite de notícias configurável (exibição).
 - Feed sem XML válido é ignorado com aviso discreto.
 
 ## Requisitos
 
-- KDE Plasma 6 (testado no Plasma 6.3)
+- KDE Plasma 6 (testado no Plasma 6.3) - DEBIAN 13
 - `kpackagetool6` (parte do `plasma-workspace`)
 
 ## Instalação
