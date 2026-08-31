@@ -36,58 +36,9 @@ PlasmoidItem {
         return v;
     })()
     readonly property var slicedAll: root.allItems.slice(0, Number(Plasmoid.configuration.maxItems) || 50)
-    property var colViews: []
-    property bool _yBusy: false
-    property double gridContentY: 0
-    property ListView masterCol: null
-    property ListView _lastMaster: null
-    property bool gridActive: false
-
-    signal gridScrollDirty()
-
-    onMasterColChanged: {
-        root.updateGridScrollVisibility();
-        if (root._lastMaster) {
-            try {
-                root._lastMaster.contentHeightChanged.disconnect(root.gridScrollDirty);
-                root._lastMaster.heightChanged.disconnect(root.gridScrollDirty);
-            } catch (e) {
-            }
-        }
-        root._lastMaster = root.masterCol;
-        if (root.masterCol) {
-            root.masterCol.contentHeightChanged.connect(root.gridScrollDirty);
-            root.masterCol.heightChanged.connect(root.gridScrollDirty);
-        }
-        root.updateGridScrollVisibility();
-        root.gridScrollDirty();
-    }
-
-    onSlicedAllChanged: root.gridScrollDirty()
-
-    function columnItems(idx) {
-        var out = [];
-        if (idx < 0 || idx >= root.newsColumns) {
-            return out;
-        }
-        for (var i = idx; i < root.slicedAll.length; i += root.newsColumns) {
-            out.push(root.slicedAll[i]);
-        }
-        return out;
-    }
-
-    onNewsColumnsChanged: {
-        root.colViews = [];
-        root.masterCol = null;
-        root._yBusy = false;
-        root.gridContentY = 0;
-        root.updateGridScrollVisibility();
-        root.gridScrollDirty();
-    }
-
-    function updateGridScrollVisibility() {
-        root.gridActive = root.newsColumns > 1 && root.masterCol !== null;
-    }
+    property double bodyWidth: 0
+    readonly property double gridColumnWidth: root.newsColumns > 0
+            ? Math.max(0, (root.bodyWidth - Kirigami.Units.largeSpacing * (root.newsColumns - 1)) / root.newsColumns) : 0
 
     function capFirst(str) {
         if (!str) return "";
@@ -96,44 +47,6 @@ PlasmoidItem {
 
     function capWords(str) {
         return String(str).split(" ").map(root.capFirst).join(" ");
-    }
-
-    readonly property double gridScrollSize: {
-        var m = root.masterCol;
-        if (!m || root.newsColumns <= 1) {
-            return 1.0;
-        }
-        if (m.contentHeight > m.height && m.height > 0) {
-            return Math.min(1.0, m.height / m.contentHeight);
-        }
-        return 1.0;
-    }
-
-    readonly property double gridScrollPosition: {
-        var m = root.masterCol;
-        if (!m || root.newsColumns <= 1) {
-            return 0.0;
-        }
-        var range = m.contentHeight - m.height;
-        if (range <= 0) {
-            return 0.0;
-        }
-        return Math.min(1.0 - root.gridScrollSize, Math.max(0.0, m.contentY / range));
-    }
-
-    function syncY(list, y) {
-        if (root._yBusy) {
-            return;
-        }
-        root._yBusy = true;
-        root.gridContentY = Math.max(0, y);
-        for (var i = 0; i < root.colViews.length; i++) {
-            if (root.colViews[i] && root.colViews[i] !== list) {
-                root.colViews[i].contentY = root.gridContentY;
-            }
-        }
-        root._yBusy = false;
-        root.gridScrollDirty();
     }
     readonly property string chosenIcon: (function() {
         var c = Plasmoid.configuration.customIcon;
@@ -425,10 +338,8 @@ PlasmoidItem {
             required property var model
 
             readonly property bool hovered: cardMouse.containsMouse
-            readonly property bool _hasParent: parent !== null
 
-            width: (_hasParent ? parent.width : 0) - 2 * Kirigami.Units.largeSpacing
-            anchors.horizontalCenter: _hasParent ? parent.horizontalCenter : undefined
+            width: root.gridColumnWidth
             height: contentText.implicitHeight + 16
             radius: Kirigami.Units.roundIconSize / 4
             color: card.hovered
@@ -626,97 +537,37 @@ PlasmoidItem {
             }
         }
 
-        // ---------------- Corpo: lista de notícias em N colunas
+        // ---------------- Corpo: notícias em N colunas (rolagem única em conjunto)
         Item {
             id: bodyItem
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
 
-            readonly property double colW: root.newsColumns > 0
-                    ? Math.max(0, bodyItem.width / root.newsColumns) : 0
-            readonly property double colH: Math.max(0, bodyItem.height
-                    - Kirigami.Units.smallSpacing - Kirigami.Units.largeSpacing)
+            onWidthChanged: root.bodyWidth = bodyItem.width
+            Component.onCompleted: root.bodyWidth = bodyItem.width
 
-            Repeater {
-                model: root.newsColumns
+            Flickable {
+                id: bodyFlick
+                anchors.fill: parent
+                clip: true
+                boundsBehavior: Flickable.StopAtBounds
+                contentWidth: bodyItem.width
+                contentHeight: Math.max(bodyGrid.height + Kirigami.Units.largeSpacing * 2, bodyItem.height)
 
-                delegate: ListView {
-                    id: colList
-                    required property int index
+                Grid {
+                    id: bodyGrid
+                    width: bodyItem.width
+                    columns: root.newsColumns
+                    flow: Grid.LeftToRight
+                    columnSpacing: Kirigami.Units.largeSpacing
+                    rowSpacing: Kirigami.Units.smallSpacing
+                    anchors.top: parent.top
+                    anchors.topMargin: Kirigami.Units.smallSpacing
 
-                    x: index * bodyItem.colW
-                    y: Kirigami.Units.smallSpacing
-                    width: bodyItem.colW
-                    height: bodyItem.colH
-                    clip: true
-                    model: root.columnItems(index)
-                    spacing: Kirigami.Units.smallSpacing
-                    boundsBehavior: Flickable.StopAtBounds
-                    flickableDirection: Flickable.AutoFlickIfNeeded
-                    PlasmaComponents3.ScrollBar.vertical: PlasmaComponents3.ScrollBar {
-                        policy: root.newsColumns > 1
-                                ? PlasmaComponents3.ScrollBar.AlwaysOff
-                                : PlasmaComponents3.ScrollBar.AsNeeded
-                    }
-
-                    delegate: newsCardDelegate
-
-                    footer: Item {
-                        width: colList.width
-                        height: Kirigami.Units.largeSpacing * 2
-                    }
-
-                    onContentYChanged: root.syncY(colList, contentY)
-
-                    Component.onCompleted: {
-                        while (root.colViews.length < root.newsColumns) {
-                            root.colViews.push(null);
-                        }
-                        root.colViews[index] = colList;
-                        if (index === 0) {
-                            root.masterCol = colList;
-                        }
-                    }
-                }
-            }
-
-            // Barra de rolagem única para todas as colunas
-            Item {
-                id: gridScrollWrap
-                objectName: "gridScrollWrap"
-                visible: root.gridActive
-                anchors.top: parent.top
-                anchors.topMargin: Kirigami.Units.smallSpacing
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: Kirigami.Units.largeSpacing
-                anchors.right: parent.right
-                width: gridScroll.implicitWidth
-
-                PlasmaComponents3.ScrollBar {
-                    id: gridScroll
-                    objectName: "gridScrollBar"
-                    anchors.fill: parent
-                    orientation: Qt.Vertical
-                    interactive: true
-                    size: 1.0
-                    position: 0.0
-
-                    Connections {
-                        target: root
-                        function onGridScrollDirty() {
-                            gridScroll.size = root.gridScrollSize;
-                            gridScroll.position = root.gridScrollPosition;
-                        }
-                    }
-
-                    onPositionChanged: {
-                        if (gridScroll.pressed && root.masterCol) {
-                            var range = root.masterCol.contentHeight - root.masterCol.height;
-                            if (range > 0) {
-                                root.syncY(root.masterCol, gridScroll.position * range);
-                            }
-                        }
+                    Repeater {
+                        model: root.slicedAll
+                        delegate: newsCardDelegate
                     }
                 }
             }
