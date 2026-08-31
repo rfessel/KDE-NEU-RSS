@@ -40,6 +40,11 @@ plasmashell:
 kquitapp6 plasmashell && kstart plasmashell
 ```
 
+Ou via Gerenciador de Widgets
+...
+Baixar o plasmoid e adicionar diretamente na edição de desktop/widgets
+...
+
 ## Uso
 
 1. Adicione o widget ao desktop (ou ao painel — na versão compacta, o
