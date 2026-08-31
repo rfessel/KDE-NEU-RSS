@@ -70,7 +70,8 @@ plasmoid/
 ├── metadata.json                 # metadados do pacote (Plasma/Applet)
 ├── po/                           # fontes de tradução (.pot/.po) + scripts
 │   ├── extract.py                # extrai i18n("...") dos QML -> template.pot
-│   ├── fill_en.py                # aplica as traduções em inglês (en_US.po)
+│   ├── translations.py           # dicionários de tradução por idioma
+│   ├── fill_po.py                # aplica as traduções em um po/<lang>.po
 │   └── build_translations.sh     # gera template.pot, mescla e compila .mo
 └── contents/
     ├── config/
@@ -93,17 +94,15 @@ Atom, CDATA, entidades, `enclosure`/`media:content` e links do tipo
 
 O widget segue o idioma do sistema (Plasma carrega automaticamente os
 catálogos embutidos em `contents/locale/`). Os textos-fonte estão em
-português; já há catálogos **pt_BR** e **en_US/en**. O idioma do sistema
-que não tiver catálogo cai de volta para o português.
+português; já há catálogos para **pt_BR, en, en_US, es, it, de e fr**.
+O idioma do sistema que não tiver catálogo cai de volta para o português.
 
 Para adicionar/atualizar idiomas:
 
 ```sh
 cd plasmoid/po
 msginit --no-translator --locale=fr --input=template.pot -o fr.po
-# edite fr.po (traduza as msgstr)
-printf 'msgfmt fr.po -o ../contents/locale/fr/LC_MESSAGES/plasma_applet_rafael.rssnoticias.mo\n' >> build_translations.sh
-# ajuste build_translations.sh para incluir fr na compilação
+# edite fr.po (traduza as msgstr) OU adicione o dicionário `fr` em translations.py
 sh build_translations.sh        # reextrai strings, mescla, compensa .mo
 ```
 

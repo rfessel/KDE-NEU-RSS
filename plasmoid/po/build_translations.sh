@@ -13,8 +13,11 @@ for PO in *.po; do
     msgmerge --update --no-fuzzy-matching "${PO}" template.pot >/dev/null
 done
 
-# 3) aplica as traduções em inglês
-python3 fill_en.py
+# 3) aplica as traduções conhecidas
+for PO in *.po; do
+    LANGNAME="${PO%.po}"
+    python3 fill_po.py "${LANGNAME}" || true
+done
 
 # 4) limpa e recompila .mo dentro do pacote (contents/locale/<lang>/LC_MESSAGES/)
 rm -rf ../contents/locale
