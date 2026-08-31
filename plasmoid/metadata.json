@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "rafael.fessel@gmail.com",
+                "Name": "Rafael Fessel"
+            }
+        ],
+        "Category": "Online Services",
+        "Description": "O melhor Widget de notícias para KDE.",
+        "Description[pt_BR]": "O melhor Widget de notícias para KDE.",
+        "Icon": "view-pim-news",
+        "Id": "rafael.rssnoticias",
+        "License": "GPL-2.0-or-later",
+        "Name": "KDE NEU RSS",
+        "Name[pt_BR]": "KDE NEU RSS",
+        "Version": "1.1",
+        "Website": ""
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
